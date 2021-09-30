@@ -25,4 +25,5 @@ var EnvironmentDataType;
     EnvironmentDataType[EnvironmentDataType["NUMBER_1"] = 1] = "NUMBER_1";
     EnvironmentDataType[EnvironmentDataType["NUMBER_2"] = 2] = "NUMBER_2";
     EnvironmentDataType[EnvironmentDataType["NUMBER_3"] = 3] = "NUMBER_3";
+    EnvironmentDataType[EnvironmentDataType["NUMBER_4"] = 4] = "NUMBER_4";
 })(EnvironmentDataType = exports.EnvironmentDataType || (exports.EnvironmentDataType = {}));

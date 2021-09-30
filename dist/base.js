@@ -30,16 +30,16 @@ exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = exports.B
 // Some imports not used depending on template conditions
 // @ts-ignore
 var axios_1 = require("axios");
-exports.BASE_PATH = 'https://api.panel.test.forfarming.co/'.replace(/\/+$/, '');
+exports.BASE_PATH = "http://localhost".replace(/\/+$/, "");
 /**
  *
  * @export
  */
 exports.COLLECTION_FORMATS = {
-    csv: ',',
-    ssv: ' ',
-    tsv: '\t',
-    pipes: '|'
+    csv: ",",
+    ssv: " ",
+    tsv: "\t",
+    pipes: "|"
 };
 /**
  *
@@ -60,6 +60,7 @@ var BaseAPI = /** @class */ (function () {
     return BaseAPI;
 }());
 exports.BaseAPI = BaseAPI;
+;
 /**
  *
  * @export
@@ -71,7 +72,7 @@ var RequiredError = /** @class */ (function (_super) {
     function RequiredError(field, msg) {
         var _this = _super.call(this, msg) || this;
         _this.field = field;
-        _this.name = 'RequiredError';
+        _this.name = "RequiredError";
         return _this;
     }
     return RequiredError;
