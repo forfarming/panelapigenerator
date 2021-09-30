@@ -17,27 +17,21 @@
 /**
  * 
  * @export
- * @interface CustomizationPropertyFieldMappingModel
+ * @interface CustomDataItemModel
  */
-export interface CustomizationPropertyFieldMappingModel {
+export interface CustomDataItemModel {
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomDataItemModel
+     */
+    customDataDefinitionItemId?: number;
     /**
      * 
      * @type {string}
-     * @memberof CustomizationPropertyFieldMappingModel
+     * @memberof CustomDataItemModel
      */
-    propertyUid?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomizationPropertyFieldMappingModel
-     */
-    fieldUid?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CustomizationPropertyFieldMappingModel
-     */
-    isActive?: boolean;
+    text?: string | null;
 }
 
 

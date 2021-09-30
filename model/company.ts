@@ -253,6 +253,18 @@ export interface Company {
      * @memberof Company
      */
     parentCompanyId?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Company
+     */
+    email?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof Company
+     */
+    availableProducts?: number;
 }
 
 

@@ -17,27 +17,21 @@
 /**
  * 
  * @export
- * @interface CustomizationPropertyFieldMappingModel
+ * @interface SendEmailCommand
  */
-export interface CustomizationPropertyFieldMappingModel {
+export interface SendEmailCommand {
     /**
      * 
      * @type {string}
-     * @memberof CustomizationPropertyFieldMappingModel
+     * @memberof SendEmailCommand
      */
-    propertyUid?: string | null;
+    hash?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof CustomizationPropertyFieldMappingModel
+     * @memberof SendEmailCommand
      */
-    fieldUid?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CustomizationPropertyFieldMappingModel
-     */
-    isActive?: boolean;
+    code?: string | null;
 }
 
 

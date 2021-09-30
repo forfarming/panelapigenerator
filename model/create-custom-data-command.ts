@@ -13,56 +13,56 @@
  */
 
 
-import { BatchDataItemModel } from './batch-data-item-model';
+import { CustomDataItemModel } from './custom-data-item-model';
 
 /**
  * 
  * @export
- * @interface BatchDataModel
+ * @interface CreateCustomDataCommand
  */
-export interface BatchDataModel {
+export interface CreateCustomDataCommand {
     /**
      * 
      * @type {string}
-     * @memberof BatchDataModel
+     * @memberof CreateCustomDataCommand
      */
     uid?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof BatchDataModel
+     * @memberof CreateCustomDataCommand
      */
-    batchMetadataUid?: string;
+    companyUid?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof BatchDataModel
+     * @memberof CreateCustomDataCommand
      */
-    placeholder?: string | null;
-    /**
-     * 
-     * @type {Array<BatchDataItemModel>}
-     * @memberof BatchDataModel
-     */
-    items?: Array<BatchDataItemModel> | null;
+    productionUid?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof BatchDataModel
+     * @memberof CreateCustomDataCommand
      */
-    code?: string | null;
+    batchUid?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof BatchDataModel
+     * @memberof CreateCustomDataCommand
      */
-    createdOn?: string;
+    customDataDefinitionUId?: string;
     /**
      * 
      * @type {string}
-     * @memberof BatchDataModel
+     * @memberof CreateCustomDataCommand
      */
-    information?: string | null;
+    text?: string | null;
+    /**
+     * 
+     * @type {Array<CustomDataItemModel>}
+     * @memberof CreateCustomDataCommand
+     */
+    items?: Array<CustomDataItemModel> | null;
 }
 
 

@@ -52,6 +52,12 @@ export interface QrCodeItem {
      * @memberof QrCodeItem
      */
     isActive?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof QrCodeItem
+     */
+    groupIndex?: number;
 }
 
 

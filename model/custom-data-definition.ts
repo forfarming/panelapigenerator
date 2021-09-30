@@ -13,86 +13,80 @@
  */
 
 
-import { RoleType } from './role-type';
+import { CustomDataDefinitionItem } from './custom-data-definition-item';
 
 /**
  * 
  * @export
- * @interface MenuItem
+ * @interface CustomDataDefinition
  */
-export interface MenuItem {
+export interface CustomDataDefinition {
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataDefinition
      */
     uid?: string;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataDefinition
      */
     createdOn?: string;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataDefinition
      */
     lastUpdatedOn?: string;
     /**
      * 
      * @type {boolean}
-     * @memberof MenuItem
+     * @memberof CustomDataDefinition
      */
     isActive?: boolean;
     /**
      * 
      * @type {boolean}
-     * @memberof MenuItem
+     * @memberof CustomDataDefinition
      */
     isDeleted?: boolean;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataDefinition
      */
     deletedOn?: string | null;
     /**
      * 
      * @type {Array<object>}
-     * @memberof MenuItem
+     * @memberof CustomDataDefinition
      */
     domainEvents?: Array<object> | null;
     /**
      * 
      * @type {number}
-     * @memberof MenuItem
+     * @memberof CustomDataDefinition
      */
     id?: number;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataDefinition
      */
-    text?: string | null;
+    name?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataDefinition
      */
-    url?: string | null;
+    description?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof MenuItem
+     * @type {Array<CustomDataDefinitionItem>}
+     * @memberof CustomDataDefinition
      */
-    icon?: string | null;
-    /**
-     * 
-     * @type {RoleType}
-     * @memberof MenuItem
-     */
-    allowedRoles?: RoleType;
+    items?: Array<CustomDataDefinitionItem> | null;
 }
 
 

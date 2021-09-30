@@ -17,27 +17,15 @@
 /**
  * 
  * @export
- * @interface CustomizationPropertyFieldMappingModel
+ * @interface DeleteCustomDataCommand
  */
-export interface CustomizationPropertyFieldMappingModel {
+export interface DeleteCustomDataCommand {
     /**
      * 
      * @type {string}
-     * @memberof CustomizationPropertyFieldMappingModel
+     * @memberof DeleteCustomDataCommand
      */
-    propertyUid?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomizationPropertyFieldMappingModel
-     */
-    fieldUid?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CustomizationPropertyFieldMappingModel
-     */
-    isActive?: boolean;
+    uid?: string;
 }
 
 

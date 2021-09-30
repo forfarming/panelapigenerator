@@ -13,86 +13,98 @@
  */
 
 
-import { RoleType } from './role-type';
+import { CustomDataItem } from './custom-data-item';
 
 /**
  * 
  * @export
- * @interface MenuItem
+ * @interface CustomData
  */
-export interface MenuItem {
+export interface CustomData {
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomData
      */
     uid?: string;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomData
      */
     createdOn?: string;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomData
      */
     lastUpdatedOn?: string;
     /**
      * 
      * @type {boolean}
-     * @memberof MenuItem
+     * @memberof CustomData
      */
     isActive?: boolean;
     /**
      * 
      * @type {boolean}
-     * @memberof MenuItem
+     * @memberof CustomData
      */
     isDeleted?: boolean;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomData
      */
     deletedOn?: string | null;
     /**
      * 
      * @type {Array<object>}
-     * @memberof MenuItem
+     * @memberof CustomData
      */
     domainEvents?: Array<object> | null;
     /**
      * 
      * @type {number}
-     * @memberof MenuItem
+     * @memberof CustomData
      */
     id?: number;
     /**
      * 
+     * @type {number}
+     * @memberof CustomData
+     */
+    companyId?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomData
+     */
+    customDataDefinitionId?: number;
+    /**
+     * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomData
      */
     text?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof MenuItem
+     * @type {number}
+     * @memberof CustomData
      */
-    url?: string | null;
+    productionId?: number | null;
     /**
      * 
-     * @type {string}
-     * @memberof MenuItem
+     * @type {number}
+     * @memberof CustomData
      */
-    icon?: string | null;
+    batchId?: number | null;
     /**
      * 
-     * @type {RoleType}
-     * @memberof MenuItem
+     * @type {Array<CustomDataItem>}
+     * @memberof CustomData
      */
-    allowedRoles?: RoleType;
+    items?: Array<CustomDataItem> | null;
 }
 
 

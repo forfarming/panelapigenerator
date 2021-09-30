@@ -13,56 +13,50 @@
  */
 
 
-import { BatchDataItemModel } from './batch-data-item-model';
+import { EnvironmentDataType } from './environment-data-type';
 
 /**
  * 
  * @export
- * @interface BatchDataModel
+ * @interface UpdateEnvironmentDataCommand
  */
-export interface BatchDataModel {
+export interface UpdateEnvironmentDataCommand {
     /**
      * 
      * @type {string}
-     * @memberof BatchDataModel
+     * @memberof UpdateEnvironmentDataCommand
      */
     uid?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof BatchDataModel
+     * @type {EnvironmentDataType}
+     * @memberof UpdateEnvironmentDataCommand
      */
-    batchMetadataUid?: string;
+    type?: EnvironmentDataType;
     /**
      * 
      * @type {string}
-     * @memberof BatchDataModel
+     * @memberof UpdateEnvironmentDataCommand
      */
-    placeholder?: string | null;
-    /**
-     * 
-     * @type {Array<BatchDataItemModel>}
-     * @memberof BatchDataModel
-     */
-    items?: Array<BatchDataItemModel> | null;
+    companyUid?: string;
     /**
      * 
      * @type {string}
-     * @memberof BatchDataModel
+     * @memberof UpdateEnvironmentDataCommand
      */
-    code?: string | null;
+    productionUid?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof BatchDataModel
+     * @memberof UpdateEnvironmentDataCommand
      */
-    createdOn?: string;
+    batchUid?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof BatchDataModel
+     * @type {number}
+     * @memberof UpdateEnvironmentDataCommand
      */
-    information?: string | null;
+    value?: number;
 }
 
 

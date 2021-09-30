@@ -26,6 +26,12 @@ export interface ForgotPasswordCommand {
      * @memberof ForgotPasswordCommand
      */
     email?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ForgotPasswordCommand
+     */
+    token?: string | null;
 }
 
 

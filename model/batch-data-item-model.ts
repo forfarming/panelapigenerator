@@ -63,6 +63,18 @@ export interface BatchDataItemModel {
      * @memberof BatchDataItemModel
      */
     code?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BatchDataItemModel
+     */
+    createdOn?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BatchDataItemModel
+     */
+    information?: string | null;
 }
 
 

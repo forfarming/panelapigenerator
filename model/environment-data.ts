@@ -99,6 +99,12 @@ export interface EnvironmentData {
      * @memberof EnvironmentData
      */
     value?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof EnvironmentData
+     */
+    description?: string | null;
 }
 
 

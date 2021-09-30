@@ -19,12 +19,9 @@
  * @export
  * @enum {string}
  */
-export enum EnvironmentDataType {
-    NUMBER_0 = 0,
+export enum RoleType {
     NUMBER_1 = 1,
-    NUMBER_2 = 2,
-    NUMBER_3 = 3,
-    NUMBER_4 = 4
+    NUMBER_2 = 2
 }
 
 

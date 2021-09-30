@@ -25,12 +25,6 @@ export interface ResetPasswordCommand {
      * @type {string}
      * @memberof ResetPasswordCommand
      */
-    email?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof ResetPasswordCommand
-     */
     token?: string | null;
     /**
      * 

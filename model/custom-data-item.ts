@@ -13,86 +13,79 @@
  */
 
 
-import { RoleType } from './role-type';
 
 /**
  * 
  * @export
- * @interface MenuItem
+ * @interface CustomDataItem
  */
-export interface MenuItem {
+export interface CustomDataItem {
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataItem
      */
     uid?: string;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataItem
      */
     createdOn?: string;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataItem
      */
     lastUpdatedOn?: string;
     /**
      * 
      * @type {boolean}
-     * @memberof MenuItem
+     * @memberof CustomDataItem
      */
     isActive?: boolean;
     /**
      * 
      * @type {boolean}
-     * @memberof MenuItem
+     * @memberof CustomDataItem
      */
     isDeleted?: boolean;
     /**
      * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataItem
      */
     deletedOn?: string | null;
     /**
      * 
      * @type {Array<object>}
-     * @memberof MenuItem
+     * @memberof CustomDataItem
      */
     domainEvents?: Array<object> | null;
     /**
      * 
      * @type {number}
-     * @memberof MenuItem
+     * @memberof CustomDataItem
      */
     id?: number;
     /**
      * 
+     * @type {number}
+     * @memberof CustomDataItem
+     */
+    customDataId?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomDataItem
+     */
+    customDataDefinitionItemId?: number;
+    /**
+     * 
      * @type {string}
-     * @memberof MenuItem
+     * @memberof CustomDataItem
      */
     text?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof MenuItem
-     */
-    url?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof MenuItem
-     */
-    icon?: string | null;
-    /**
-     * 
-     * @type {RoleType}
-     * @memberof MenuItem
-     */
-    allowedRoles?: RoleType;
 }
 
 

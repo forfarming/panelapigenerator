@@ -80,6 +80,18 @@ export interface Template {
      * @memberof Template
      */
     frontendId?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Template
+     */
+    isHidden?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Template
+     */
+    isDefault?: boolean;
 }
 
 
