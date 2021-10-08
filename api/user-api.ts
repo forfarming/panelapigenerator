@@ -21,6 +21,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
+import { ChangePasswordCommand } from '../model';
+// @ts-ignore
 import { CreateUserCommand } from '../model';
 // @ts-ignore
 import { DeleteUserCommand } from '../model';
@@ -40,6 +42,46 @@ import { UserModel } from '../model';
  */
 export const UserApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @param {string} culture 
+         * @param {ChangePasswordCommand} [changePasswordCommand] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiCultureUserChangePasswordPost: async (culture: string, changePasswordCommand?: ChangePasswordCommand, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'culture' is not null or undefined
+            assertParamExists('apiCultureUserChangePasswordPost', 'culture', culture)
+            const localVarPath = `/api/{culture}/User/ChangePassword`
+                .replace(`{${"culture"}}`, encodeURIComponent(String(culture)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json-patch+json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(changePasswordCommand, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @param {string} culture 
@@ -321,6 +363,46 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @param {string} token 
+         * @param {string} culture 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiCultureUserValidateTokenTokenGet: async (token: string, culture: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'token' is not null or undefined
+            assertParamExists('apiCultureUserValidateTokenTokenGet', 'token', token)
+            // verify required parameter 'culture' is not null or undefined
+            assertParamExists('apiCultureUserValidateTokenTokenGet', 'culture', culture)
+            const localVarPath = `/api/{culture}/User/ValidateToken/{token}`
+                .replace(`{${"token"}}`, encodeURIComponent(String(token)))
+                .replace(`{${"culture"}}`, encodeURIComponent(String(culture)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Bearer required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -331,6 +413,17 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
 export const UserApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = UserApiAxiosParamCreator(configuration)
     return {
+        /**
+         * 
+         * @param {string} culture 
+         * @param {ChangePasswordCommand} [changePasswordCommand] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiCultureUserChangePasswordPost(culture: string, changePasswordCommand?: ChangePasswordCommand, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateUserCommand>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiCultureUserChangePasswordPost(culture, changePasswordCommand, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
         /**
          * 
          * @param {string} culture 
@@ -407,6 +500,17 @@ export const UserApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apiCultureUserUidGet(uid, culture, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * 
+         * @param {string} token 
+         * @param {string} culture 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiCultureUserValidateTokenTokenGet(token: string, culture: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiCultureUserValidateTokenTokenGet(token, culture, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -417,6 +521,16 @@ export const UserApiFp = function(configuration?: Configuration) {
 export const UserApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = UserApiFp(configuration)
     return {
+        /**
+         * 
+         * @param {string} culture 
+         * @param {ChangePasswordCommand} [changePasswordCommand] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiCultureUserChangePasswordPost(culture: string, changePasswordCommand?: ChangePasswordCommand, options?: any): AxiosPromise<CreateUserCommand> {
+            return localVarFp.apiCultureUserChangePasswordPost(culture, changePasswordCommand, options).then((request) => request(axios, basePath));
+        },
         /**
          * 
          * @param {string} culture 
@@ -486,6 +600,16 @@ export const UserApiFactory = function (configuration?: Configuration, basePath?
         apiCultureUserUidGet(uid: string, culture: string, options?: any): AxiosPromise<UserModel> {
             return localVarFp.apiCultureUserUidGet(uid, culture, options).then((request) => request(axios, basePath));
         },
+        /**
+         * 
+         * @param {string} token 
+         * @param {string} culture 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiCultureUserValidateTokenTokenGet(token: string, culture: string, options?: any): AxiosPromise<boolean> {
+            return localVarFp.apiCultureUserValidateTokenTokenGet(token, culture, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -495,6 +619,16 @@ export const UserApiFactory = function (configuration?: Configuration, basePath?
  * @interface UserApi
  */
 export interface UserApiInterface {
+    /**
+     * 
+     * @param {string} culture 
+     * @param {ChangePasswordCommand} [changePasswordCommand] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UserApiInterface
+     */
+    apiCultureUserChangePasswordPost(culture: string, changePasswordCommand?: ChangePasswordCommand, options?: any): AxiosPromise<CreateUserCommand>;
+
     /**
      * 
      * @param {string} culture 
@@ -564,6 +698,16 @@ export interface UserApiInterface {
      */
     apiCultureUserUidGet(uid: string, culture: string, options?: any): AxiosPromise<UserModel>;
 
+    /**
+     * 
+     * @param {string} token 
+     * @param {string} culture 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UserApiInterface
+     */
+    apiCultureUserValidateTokenTokenGet(token: string, culture: string, options?: any): AxiosPromise<boolean>;
+
 }
 
 /**
@@ -573,6 +717,18 @@ export interface UserApiInterface {
  * @extends {BaseAPI}
  */
 export class UserApi extends BaseAPI implements UserApiInterface {
+    /**
+     * 
+     * @param {string} culture 
+     * @param {ChangePasswordCommand} [changePasswordCommand] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UserApi
+     */
+    public apiCultureUserChangePasswordPost(culture: string, changePasswordCommand?: ChangePasswordCommand, options?: any) {
+        return UserApiFp(this.configuration).apiCultureUserChangePasswordPost(culture, changePasswordCommand, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @param {string} culture 
@@ -654,5 +810,17 @@ export class UserApi extends BaseAPI implements UserApiInterface {
      */
     public apiCultureUserUidGet(uid: string, culture: string, options?: any) {
         return UserApiFp(this.configuration).apiCultureUserUidGet(uid, culture, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {string} token 
+     * @param {string} culture 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof UserApi
+     */
+    public apiCultureUserValidateTokenTokenGet(token: string, culture: string, options?: any) {
+        return UserApiFp(this.configuration).apiCultureUserValidateTokenTokenGet(token, culture, options).then((request) => request(this.axios, this.basePath));
     }
 }

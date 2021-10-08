@@ -4,6 +4,7 @@ export * from './batch-data-model';
 export * from './batch-metadata-item-type';
 export * from './batch-model';
 export * from './batch-status';
+export * from './change-password-command';
 export * from './company';
 export * from './company-certificate';
 export * from './company-facility-photo';

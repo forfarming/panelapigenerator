@@ -27,6 +27,7 @@ model/batch-metadata-item-type.ts
 model/batch-model.ts
 model/batch-status.ts
 model/batch.ts
+model/change-password-command.ts
 model/company-certificate.ts
 model/company-facility-photo.ts
 model/company-type.ts
